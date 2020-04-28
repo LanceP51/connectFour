@@ -9,7 +9,7 @@ RED = (255,0,0)
 YELLOW = (255,255,0)
 
 ROW_COUNT = 6
-COLUMN_COUNT = 7
+COLUMN_COUNT = 8
 
 def create_board():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
@@ -43,14 +43,14 @@ def winning_move(board, piece):
 				return True
 
 	# Check positively sloped diagonals
-	for c in range(COLUMN_COUNT-3):
-		for r in range(ROW_COUNT-3):
+	for c in range(COLUMN_COUNT-4):
+		for r in range(ROW_COUNT-4):
 			if board[r][c] == piece and board[r+1][c+1] == piece and board[r+2][c+2] == piece and board[r+3][c+3] == piece and board[r+4][c+4] == piece:
 				return True
 
 	# Check negatively sloped diagonals
 	for c in range(COLUMN_COUNT-4):
-		for r in range(3, ROW_COUNT):
+		for r in range(4, ROW_COUNT):
 			if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece and board[r-4][c+4] == piece:
 				return True
 
@@ -108,7 +108,6 @@ while not game_over:
 
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			pygame.draw.rect(screen, BLACK, (0,0, width, SQUARESIZE))
-			#print(event.pos)
 			# Ask for Player 1 Input
 			if turn == 0:
 				posx = event.pos[0]
@@ -145,4 +144,4 @@ while not game_over:
 			turn = turn % 2
 
 			if game_over:
-				pygame.time.wait(3000)
+				pygame.time.wait(4000)

@@ -11,3 +11,11 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+
+
+
+
+
+///////////////////
+I, Lance Pennington, have utilized the original form of this project from a tutorial
+on FreeCodeCamp, and I have modified multiple aspects of this game to deepen my understanding of Python.

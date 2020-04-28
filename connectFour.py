@@ -76,7 +76,7 @@ turn = 0
 
 pygame.init()
 
-SQUARESIZE = 100
+SQUARESIZE = 75
 
 width = COLUMN_COUNT * SQUARESIZE
 height = (ROW_COUNT+1) * SQUARESIZE
@@ -89,7 +89,7 @@ screen = pygame.display.set_mode(size)
 draw_board(board)
 pygame.display.update()
 
-myfont = pygame.font.SysFont("monospace", 75)
+myfont = pygame.font.SysFont("monospace", 60)
 
 while not game_over:
 
@@ -144,4 +144,4 @@ while not game_over:
 			turn = turn % 2
 
 			if game_over:
-				pygame.time.wait(4000)
+				pygame.time.wait(3000)

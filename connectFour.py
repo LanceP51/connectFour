@@ -31,27 +31,27 @@ def print_board(board):
 
 def winning_move(board, piece):
 	# Check horizontal locations for win
-	for c in range(COLUMN_COUNT-3):
+	for c in range(COLUMN_COUNT-4):
 		for r in range(ROW_COUNT):
-			if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece:
+			if board[r][c] == piece and board[r][c+1] == piece and board[r][c+2] == piece and board[r][c+3] == piece and board[r][c+4] == piece:
 				return True
 
 	# Check vertical locations for win
 	for c in range(COLUMN_COUNT):
-		for r in range(ROW_COUNT-3):
-			if board[r][c] == piece and board[r+1][c] == piece and board[r+2][c] == piece and board[r+3][c] == piece:
+		for r in range(ROW_COUNT-4):
+			if board[r][c] == piece and board[r+1][c] == piece and board[r+2][c] == piece and board[r+3][c] == piece and board[r+4][c] == piece:
 				return True
 
-	# Check positively sloped diaganols
+	# Check positively sloped diagonals
 	for c in range(COLUMN_COUNT-3):
 		for r in range(ROW_COUNT-3):
-			if board[r][c] == piece and board[r+1][c+1] == piece and board[r+2][c+2] == piece and board[r+3][c+3] == piece:
+			if board[r][c] == piece and board[r+1][c+1] == piece and board[r+2][c+2] == piece and board[r+3][c+3] == piece and board[r+4][c+4] == piece:
 				return True
 
-	# Check negatively sloped diaganols
-	for c in range(COLUMN_COUNT-3):
+	# Check negatively sloped diagonals
+	for c in range(COLUMN_COUNT-4):
 		for r in range(3, ROW_COUNT):
-			if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
+			if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece and board[r-4][c+4] == piece:
 				return True
 
 def draw_board(board):
